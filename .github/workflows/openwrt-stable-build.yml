@@ -18,9 +18,9 @@ on:
           - "19.07.10"
           - "18.06.9"
 
-env:
+# env:
   # OPENWRT_VERSION: ${{ inputs.openwrt_version }} 
-  OPENWRT_VERSION: 24.10.0
+  # OPENWRT_VERSION: 24.10.0
 
 jobs:
   build:
@@ -34,6 +34,10 @@ jobs:
           - 5000:5000
 
     steps:
+      - name: Set up environment variables
+        run: |
+          echo "OPENWRT_VERSION=${{ inputs.openwrt_version }}" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
 
