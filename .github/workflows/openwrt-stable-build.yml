@@ -19,7 +19,7 @@ on:
           - "18.06.9"
 
 # env:
-  # OPENWRT_VERSION: ${{ inputs.openwrt_version }} 
+  # OPENWRT_VERSION: ${{ github.event.inputs.openwrt_version }} 
   # OPENWRT_VERSION: 24.10.0
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Set up environment variables
         run: |
-          echo "OPENWRT_VERSION='${{ inputs.openwrt_version }}'" >> $GITHUB_ENV
+          echo "OPENWRT_VERSION='${{ github.event.inputs.openwrt_version }}'" >> $GITHUB_ENV
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -167,7 +167,7 @@ jobs:
 
       - name: Set up environment variables
         run: |
-          echo "OPENWRT_VERSION='${{ inputs.openwrt_version }}'" >> $GITHUB_ENV
+          echo "OPENWRT_VERSION='${{ github.event.inputs.openwrt_version }}'" >> $GITHUB_ENV
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -237,7 +237,7 @@ jobs:
 
       - name: Set up environment variables
         run: |
-          echo "OPENWRT_VERSION='${{ inputs.openwrt_version }}'" >> $GITHUB_ENV
+          echo "OPENWRT_VERSION='${{ github.event.inputs.openwrt_version }}'" >> $GITHUB_ENV
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -355,7 +355,7 @@ jobs:
 
       - name: Set up environment variables
         run: |
-          echo "OPENWRT_VERSION='${{ inputs.openwrt_version }}'" >> $GITHUB_ENV
+          echo "OPENWRT_VERSION='${{ github.event.inputs.openwrt_version }}'" >> $GITHUB_ENV
 
       - name: Checkout
         uses: actions/checkout@v4
