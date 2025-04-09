@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Set up environment variables
         run: |
-          echo "OPENWRT_VERSION=${{ inputs.openwrt_version }}" >> $GITHUB_ENV
+          echo "OPENWRT_VERSION='${{ inputs.openwrt_version }}'" >> $GITHUB_ENV
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -164,6 +164,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+
+      - name: Set up environment variables
+        run: |
+          echo "OPENWRT_VERSION='${{ inputs.openwrt_version }}'" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -229,6 +234,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+
+      - name: Set up environment variables
+        run: |
+          echo "OPENWRT_VERSION='${{ inputs.openwrt_version }}'" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -342,6 +352,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Set up environment variables
+        run: |
+          echo "OPENWRT_VERSION='${{ inputs.openwrt_version }}'" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
 
