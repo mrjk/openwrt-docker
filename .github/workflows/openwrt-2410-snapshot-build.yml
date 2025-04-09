@@ -59,7 +59,7 @@ jobs:
             OPENWRT_VERSION=${{ env.OPENWRT_VERSION }}
             BUILDKIT_MULTI_PLATFORM=1
           tags: |
-            albrechtloh/openwrt-docker:ci-openwrt-2410-snapshot
+            mrjk/openwrt-docker:ci-openwrt-2410-snapshot
             localhost:5000/local/openwrt-docker:latest
 
       - name: Inspect
@@ -156,7 +156,7 @@ jobs:
       - name: Generate alpine SBOM
         uses: anchore/sbom-action@v0
         with:
-          image: albrechtloh/openwrt-docker:ci-openwrt-2410-snapshot
+          image: mrjk/openwrt-docker:ci-openwrt-2410-snapshot
           upload-artifact: false
           format: cyclonedx-json
           output-file: alpine_sbom.json
@@ -164,7 +164,7 @@ jobs:
       - name: Prepare OpenWrt rootfs
         run: |
           # Use automated generated image
-          sed -i 's/image: albrechtloh\/openwrt-docker:latest/image: albrechtloh\/openwrt-docker:ci-openwrt-2410-snapshot/g' docker-compose.yml
+          sed -i 's/image: mrjk\/openwrt-docker:latest/image: mrjk\/openwrt-docker:ci-openwrt-2410-snapshot/g' docker-compose.yml
 
           # Run OpenWrt container for some time to install additional IPKs
           set +e # Enable that the next command can fail
@@ -341,5 +341,5 @@ jobs:
       - name: Tag image at Docker Hub
         run: |
           docker buildx imagetools create \
-            --tag albrechtloh/openwrt-docker:openwrt-2410-snapshot  \
-            albrechtloh/openwrt-docker:ci-openwrt-2410-snapshot
+            --tag mrjk/openwrt-docker:openwrt-2410-snapshot  \
+            mrjk/openwrt-docker:ci-openwrt-2410-snapshot

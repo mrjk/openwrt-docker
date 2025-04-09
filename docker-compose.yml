@@ -1,8 +1,8 @@
 services:
   openwrt:
     container_name: openwrt
-    image: albrechtloh/openwrt-docker:latest # for latest OpenWrt stable version
-    #image: albrechtloh/openwrt-docker:openwrt-master-snapshot # for latest OpenWrt master version
+    image: mrjk/openwrt-docker:latest # for latest OpenWrt stable version
+    #image: mrjk/openwrt-docker:openwrt-master-snapshot # for latest OpenWrt master version
     #image: openwrt-docker
     build:
       context: .

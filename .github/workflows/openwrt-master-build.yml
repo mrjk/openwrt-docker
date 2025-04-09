@@ -60,7 +60,7 @@ jobs:
             OPENWRT_VERSION=${{ env.OPENWRT_VERSION }}
             BUILDKIT_MULTI_PLATFORM=1
           tags: |
-            albrechtloh/openwrt-docker:ci-openwrt-master-snapshot
+            mrjk/openwrt-docker:ci-openwrt-master-snapshot
             localhost:5000/local/openwrt-docker:latest
 
       - name: Inspect
@@ -158,7 +158,7 @@ jobs:
       - name: Generate alpine SBOM
         uses: anchore/sbom-action@v0
         with:
-          image: albrechtloh/openwrt-docker:ci-openwrt-master-snapshot
+          image: mrjk/openwrt-docker:ci-openwrt-master-snapshot
           upload-artifact: false
           format: cyclonedx-json
           output-file: alpine_sbom.json
@@ -166,7 +166,7 @@ jobs:
       - name: Prepare OpenWrt rootfs
         run: |
           # Use automated generated image
-          sed -i 's/image: albrechtloh\/openwrt-docker:latest/image: albrechtloh\/openwrt-docker:ci-openwrt-master-snapshot/g' docker-compose.yml
+          sed -i 's/image: mrjk\/openwrt-docker:latest/image: mrjk\/openwrt-docker:ci-openwrt-master-snapshot/g' docker-compose.yml
 
           # Run OpenWrt container for some time to install additional IPKs
           set +e # Enable that the next command can fail
@@ -316,7 +316,7 @@ jobs:
       - name: Prepare tests
         run: |
           # Use local image instead of hub.docker.com
-          sed -i 's/image: albrechtloh\/openwrt-docker:latest/image: openwrt-docker/g' test/tests/docker-compose.yml.template
+          sed -i 's/image: mrjk\/openwrt-docker:latest/image: openwrt-docker/g' test/tests/docker-compose.yml.template
           cat test/tests/docker-compose.yml.template
 
       - name: Run tests
@@ -348,5 +348,5 @@ jobs:
       - name: Tag image at Docker Hub
         run: |
           docker buildx imagetools create \
-            --tag albrechtloh/openwrt-docker:openwrt-master-snapshot  \
-            albrechtloh/openwrt-docker:ci-openwrt-master-snapshot 
+            --tag mrjk/openwrt-docker:openwrt-master-snapshot  \
+            mrjk/openwrt-docker:ci-openwrt-master-snapshot 

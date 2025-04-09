@@ -1,6 +1,6 @@
 # OpenWrt docker container for x86_64, arm64 and Weidmueller u-OS
 
-[![Docker pulls](https://img.shields.io/docker/pulls/albrechtloh/openwrt-docker)](https://hub.docker.com/r/albrechtloh/openwrt-docker)
+[![Docker pulls](https://img.shields.io/docker/pulls/mrjk/openwrt-docker)](https://hub.docker.com/r/mrjk/openwrt-docker)
 [![OpenWrt stable build](https://github.com/AlbrechtL/openwrt-docker/actions/workflows/openwrt-stable-build.yml/badge.svg)](https://github.com/AlbrechtL/openwrt-docker/actions/workflows/openwrt-stable-build.yml)
 [![OpenWrt master build](https://github.com/AlbrechtL/openwrt-docker/actions/workflows/openwrt-master-build.yml/badge.svg)](https://github.com/AlbrechtL/openwrt-docker/actions/workflows/openwrt-master-build.yml)
 
@@ -43,11 +43,11 @@ All other drivers for USB and PCIe devices needs to be installed via the OpenWrt
 
 Adapt [`docker-compose.yml`](https://github.com/AlbrechtL/openwrt-docker/blob/master/docker-compose.yml) to your needs and run `docker compose up`.
 
-Images are available at https://hub.docker.com/r/albrechtloh/openwrt-docker.
+Images are available at https://hub.docker.com/r/mrjk/openwrt-docker.
 
 Currently, three images are available. For all of these images automated tests are applied.
-* `albrechtloh/openwrt-docker:latest` Latest OpenWrt stable version e.g. 24.10.0
-* `albrechtloh/openwrt-docker:openwrt-master-snapshot` Latest OpenWrt master version
+* `mrjk/openwrt-docker:latest` Latest OpenWrt stable version e.g. 24.10.0
+* `mrjk/openwrt-docker:openwrt-master-snapshot` Latest OpenWrt master version
 
 ## Support
 We really want to help you using this container image.

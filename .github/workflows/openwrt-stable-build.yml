@@ -57,7 +57,7 @@ jobs:
             OPENWRT_VERSION=${{ env.OPENWRT_VERSION }}
             BUILDKIT_MULTI_PLATFORM=1
           tags: |
-            albrechtloh/openwrt-docker:ci-openwrt-stable
+            mrjk/openwrt-docker:ci-openwrt-stable
             localhost:5000/local/openwrt-docker:latest
 
       - name: Inspect
@@ -152,7 +152,7 @@ jobs:
       - name: Generate alpine SBOM
         uses: anchore/sbom-action@v0
         with:
-          image: albrechtloh/openwrt-docker:ci-openwrt-stable
+          image: mrjk/openwrt-docker:ci-openwrt-stable
           upload-artifact: false
           format: cyclonedx-json
           output-file: alpine_sbom.json
@@ -338,6 +338,6 @@ jobs:
           GIT_HASH=`git rev-parse --short HEAD`
 
           docker buildx imagetools create \
-            --tag albrechtloh/openwrt-docker:openwrt-${{ env.OPENWRT_VERSION }}-$GIT_HASH \
-            --tag albrechtloh/openwrt-docker:latest \
-            albrechtloh/openwrt-docker:ci-openwrt-stable 
+            --tag mrjk/openwrt-docker:openwrt-${{ env.OPENWRT_VERSION }}-$GIT_HASH \
+            --tag mrjk/openwrt-docker:latest \
+            mrjk/openwrt-docker:ci-openwrt-stable 
