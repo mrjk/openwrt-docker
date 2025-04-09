@@ -19,8 +19,8 @@ on:
           - "18.06.9"
 
 env:
-  OPENWRT_VERSION: ${{ inputs.openwrt_version }} 
-  # OPENWRT_VERSION: 24.10.0
+  # OPENWRT_VERSION: ${{ inputs.openwrt_version }} 
+  OPENWRT_VERSION: 24.10.0
 
 jobs:
   build:
